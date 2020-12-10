@@ -5,4 +5,4 @@ Projetos feitos em cursos disponíveis no [Origamid](https://www.origamid.com/)
 
 | Curso | Status |
 |---|---|
-| JavaScript Completo ES6+ | ⌛️  |
+| [JavaScript Completo ES6+](https://github.com/driellyps/origamid-projetos/tree/master/curso-js) | ⌛️  |
