@@ -1,6 +1,8 @@
 initTabNav();
 initAccordion();
+softScroll();
 
+/* Nav by tabs */
 function initTabNav () {
   const tabMenu = document.querySelectorAll('.js-tabmenu li');
 const tabContent = document.querySelectorAll('.js-tabcontent section');
@@ -25,6 +27,7 @@ if(tabMenu.length && tabContent.length) {
 }
 }
 
+/* Accordion List */
 function initAccordion () {
   const accordionList = document.querySelectorAll('.js-accordion dt');
 
@@ -41,3 +44,29 @@ function initAccordion () {
   }
 
 }
+
+/* Soft Scroll on Internal Links */
+function softScroll() {
+  const menuLinks = document.querySelectorAll('.js-menu a[href^="#"]');
+
+  if(menuLinks.length) {
+    function scrollToSection(event) {
+      event.preventDefault();
+      const href = event.currentTarget.getAttribute('href');
+      const section = document.querySelector(href);
+    
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+    
+    
+    menuLinks.forEach(link => {
+      link.addEventListener('click', scrollToSection)
+    })
+
+  }
+  
+  
+} 
