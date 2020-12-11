@@ -1,6 +1,7 @@
 initTabNav();
 initAccordion();
-softScroll();
+initSoftScroll();
+initSectionAnimation();
 
 /* Nav by tabs */
 function initTabNav() {
@@ -44,7 +45,7 @@ function initAccordion() {
 }
 
 /* Soft Scroll on Internal Links */
-function softScroll() {
+function initSoftScroll() {
   const menuLinks = document.querySelectorAll('.js-menu a[href^="#"]');
 
   if (menuLinks.length) {
@@ -64,3 +65,25 @@ function softScroll() {
     });
   }
 } 
+
+/* Animation on scroll */
+function initSectionAnimation () {
+  const sections = document.querySelectorAll('.js-scroll');
+
+  if(sections.length) {
+    const halfWindow = window.innerHeight * 0.6;
+    
+    function showSection() {
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const isSectionVisible = (sectionTop - halfWindow) < 0;
+    
+        if(isSectionVisible) section.classList.add('active')
+      })
+    };
+    
+    showSection(); 
+    
+    window.addEventListener('scroll', showSection);
+  }
+}
