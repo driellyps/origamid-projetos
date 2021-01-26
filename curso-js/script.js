@@ -5,8 +5,8 @@ initSectionAnimation();
 
 /* Nav by tabs */
 function initTabNav() {
-  const tabMenu = document.querySelectorAll('.js-tabmenu li');
-  const tabContent = document.querySelectorAll('.js-tabcontent section');
+  const tabMenu = document.querySelectorAll('[data-tab="menu"] li');
+  const tabContent = document.querySelectorAll('[data-tab="content"] section');
 
   if (tabMenu.length && tabContent.length) {
     tabContent[0].classList.add('active')
@@ -30,7 +30,7 @@ function initTabNav() {
 
 /* Accordion List */
 function initAccordion() {
-  const accordionList = document.querySelectorAll('.js-accordion dt');
+  const accordionList = document.querySelectorAll('[data-anime="accordion"] dt');
 
   if (accordionList.length) {
     function activeAccordion() {
@@ -46,7 +46,7 @@ function initAccordion() {
 
 /* Soft Scroll on Internal Links */
 function initSoftScroll() {
-  const menuLinks = document.querySelectorAll('.js-menu a[href^="#"]');
+  const menuLinks = document.querySelectorAll('[data-menu="soft"] a[href^="#"]');
 
   if (menuLinks.length) {
     function scrollToSection(event) {
@@ -68,7 +68,7 @@ function initSoftScroll() {
 
 /* Animation on scroll */
 function initSectionAnimation () {
-  const sections = document.querySelectorAll('.js-scroll');
+  const sections = document.querySelectorAll('[data-anime="scroll"]');
 
   if(sections.length) {
     const halfWindow = window.innerHeight * 0.6;
