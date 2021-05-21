@@ -1,10 +1,10 @@
-export default function clickOutside(element, callback) {
+export default function clickOutside(element, events, callback) {
   const html = document.documentElement;
   const clicked = 'data-clicked';
 
   if(!element.hasAttribute(clicked)) {
-    html.addEventListener('click', handleOutsideClick);
-    html.addEventListener('touchstart', handleOutsideClick);
+    setTimeout(() => html.addEventListener('click', handleOutsideClick));
+    setTimeout(() => html.addEventListener('touchstart', handleOutsideClick));
     element.setAttribute(clicked, '');
   }
 

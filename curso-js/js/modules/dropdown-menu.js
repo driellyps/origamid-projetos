@@ -1,4 +1,4 @@
-import clickOutside from './clickOutside'
+import clickOutside from './clickOutside.js'
 
 export default function initDropdownMenu() {
   const dropdownMenus = document.querySelectorAll('[data-dropdown]');
@@ -6,7 +6,7 @@ export default function initDropdownMenu() {
   function handleClick(event) {
     event.preventDefault();
     this.classList.add('active');
-    clickOutside(this, () => {
+    clickOutside(this, ['click', 'touchstart'], () => {
       this.classList.remove('active')
     });
   }
