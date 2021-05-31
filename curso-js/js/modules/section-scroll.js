@@ -9,7 +9,7 @@ export default function initSectionAnimation () {
         const sectionTop = section.getBoundingClientRect().top;
         const isSectionVisible = (sectionTop - halfWindow) < 0;
     
-        if(isSectionVisible) section.classList.add('active')
+        if(isSectionVisible) section.classList.add('active');
       })
     };
     
